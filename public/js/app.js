@@ -8,7 +8,7 @@ fetch('http://localhost:3000/songs_list.json')
   });
 
 const onSongsReturn = (songsList) => {
-  let songIndex = 1;
+  let songIndex = 0;
 
   const initSong = () => {
     album_cover.src = songsList[songIndex].cover;
@@ -35,7 +35,17 @@ const onSongsReturn = (songsList) => {
 
   forward.addEventListener('click', () => {
     songIndex++;
+    if (songIndex > songsList.length - 1) {
+      songIndex = 0;
+    }
     initSong();
-    console.log(songIndex);
+  });
+
+  backward.addEventListener('click', () => {
+    songIndex--;
+    if (songIndex < 0) {
+      songIndex = songsList.length - 1;
+    }
+    initSong();
   });
 };
