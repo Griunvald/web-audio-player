@@ -25,5 +25,15 @@ const initSong = () => {
 initSong();
 
 play.addEventListener('click', () => {
-  audio.play();
+  const playButton = document.getElementById('play');
+  isPlaying = playButton.classList.contains('fa-pause');
+  console.log(isPlaying);
+  if (isPlaying) {
+    playButton.classList.remove('fa-pause');
+    audio.pause();
+    playButton.classList.add('fa-play');
+  } else if (!isPlaying) {
+    audio.play();
+    playButton.classList.add('fa-pause');
+  }
 });
