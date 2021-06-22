@@ -8,16 +8,14 @@ fetch('http://localhost:3000/songs_list.json')
   });
 
 const onSongsReturn = (songsList) => {
-  let songIndex = 2;
-  let currentSong = songsList[songIndex];
-  console.log(currentSong);
+  let songIndex = 1;
 
   const initSong = () => {
-    album_cover.src = currentSong.cover;
-    artist.innerText = currentSong.artist;
-    title.innerText = currentSong.title;
-    year.innerText = currentSong.year;
-    audio.src = currentSong.file;
+    album_cover.src = songsList[songIndex].cover;
+    artist.innerText = songsList[songIndex].artist;
+    title.innerText = songsList[songIndex].title;
+    year.innerText = songsList[songIndex].year;
+    audio.src = songsList[songIndex].file;
   };
   initSong();
 
@@ -39,6 +37,5 @@ const onSongsReturn = (songsList) => {
     songIndex++;
     initSong();
     console.log(songIndex);
-    console.log(currentSong);
   });
 };
