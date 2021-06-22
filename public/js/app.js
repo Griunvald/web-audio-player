@@ -27,10 +27,12 @@ const songsList = [
   },
 ];
 
-const songIndex = 0;
-const currentSong = songsList[songIndex];
+let songIndex = 2;
+let currentSong = songsList[songIndex];
+console.log(currentSong);
 
 const initSong = () => {
+  album_cover.src = currentSong.cover;
   artist.innerText = currentSong.artist;
   title.innerText = currentSong.title;
   year.innerText = currentSong.year;
@@ -50,4 +52,11 @@ play.addEventListener('click', () => {
     audio.play();
     playButton.classList.add('fa-pause');
   }
+});
+
+forward.addEventListener('click', () => {
+  songIndex++;
+  initSong();
+  console.log(songIndex);
+  console.log(currentSong);
 });
