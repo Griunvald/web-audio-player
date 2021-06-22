@@ -20,5 +20,10 @@ const initSong = () => {
   artist.innerText = currentSong.artist;
   title.innerText = currentSong.title;
   year.innerText = currentSong.year;
+  audio.src = currentSong.file;
 };
 initSong();
+
+play.addEventListener('click', () => {
+  audio.play();
+});
