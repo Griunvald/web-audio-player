@@ -11,6 +11,20 @@ const songsList = [
     cover: 'images/led_zeppelin.png',
     file: 'songs/1.mp3',
   },
+  {
+    artist: 'The Rolling Stones',
+    title: 'Gimmi Shelter',
+    year: '1969',
+    cover: 'images/rolling_stones.jpg',
+    file: 'songs/2.mp3',
+  },
+  {
+    artist: 'Jimy Hendrix',
+    title: 'Foxy Lady',
+    year: '1967',
+    cover: 'images/jimy_hendrix.jpg',
+    file: 'songs/3.mp3',
+  },
 ];
 
 const songIndex = 0;
