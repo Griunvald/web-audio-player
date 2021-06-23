@@ -55,4 +55,8 @@ audio.addEventListener('timeupdate', (e) => {
   const currentPosition = (currentTime / duration) * 100;
   progress_bar.style.width = `${currentPosition}%`;
   console.log(currentTime);
+  const minutes = parseInt(audio.duration / 60, 10);
+  const seconds = parseInt(audio.duration % 60);
+
+  console.log(minutes + ':' + seconds);
 });
