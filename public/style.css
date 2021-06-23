@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #eff1f3;
+  background-color: #f3eff5;
   margin: 0;
   font-family: 'PT Sans', sans-serif;
 }
@@ -17,6 +17,14 @@ body {
 .player_container {
   display: inline-block;
   margin-top: 100px;
+  background-color: #454955;
+  border: 1px solid black
+  border-radius: 2px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.media_info {
+  color: white;
 }
 
 #progress_bar_container {
@@ -29,5 +37,12 @@ body {
   height: 100%;
   width: 0%;
   transition: width 0.1s;
-  background-color: red;
+  background-color: orange;
+}
+
+.control_panel i {
+  font-size: 30px;
+  margin: 40px;
+  text-align: center;
+  color: orange;
 }
