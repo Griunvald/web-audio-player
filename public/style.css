@@ -45,6 +45,9 @@ body {
   background-color: orange;
 }
 
+.time {
+  color: white;
+}
 .control_panel i {
   font-size: 30px;
   margin: 40px;

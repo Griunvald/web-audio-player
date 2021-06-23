@@ -66,4 +66,6 @@ audio.addEventListener('timeupdate', (e) => {
 
   console.log(prettyTime(currentTime));
   console.log(prettyTime(duration));
+  current_time.innerText = prettyTime(currentTime);
+  total_time.innerText = prettyTime(duration - currentTime);
 });
