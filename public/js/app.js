@@ -71,5 +71,14 @@ const onSongsReturn = (songsList) => {
       total_time.innerText = songsList[songIndex].time;
     }
   });
+
+  audio.addEventListener('ended', () => {
+    songIndex++;
+    initSong();
+    audio.play();
+    if (songIndex > songsList.length - 1) {
+      songIndex = 0;
+    }
+  });
   initSong();
 };
