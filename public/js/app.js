@@ -63,8 +63,13 @@ const onSongsReturn = (songsList) => {
     const currentPosition = (currentTime / duration) * 100;
     progress_bar.style.width = `${currentPosition}%`;
 
+    console.log(prettyTime(currentTime));
+    console.log(prettyTime(duration - currentTime));
     current_time.innerText = prettyTime(currentTime);
     total_time.innerText = prettyTime(duration - currentTime);
+    if (total_time.innerText === 'NaN:NaN') {
+      total_time.innerText = songsList[songIndex].time;
+    }
   });
   initSong();
 };
