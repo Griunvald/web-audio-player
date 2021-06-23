@@ -1,5 +1,22 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: rgb(245, 231, 231);
+  background-color: #eff1f3;
+  margin: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.main_container {
+  width: 100%;
+  text-align: center;
+}
+.player_container {
+  display: inline-block;
+  margin-top: 100px;
 }
 
 #progress_bar_container {
