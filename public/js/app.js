@@ -36,10 +36,13 @@ const onSongsReturn = (songsList) => {
 
   forward.addEventListener('click', () => {
     songIndex++;
+    progress_bar.style.width = 0;
+
     if (songIndex > songsList.length - 1) {
       songIndex = 0;
     }
     initSong();
+    audio.play();
   });
 
   backward.addEventListener('click', () => {
