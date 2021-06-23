@@ -16,8 +16,9 @@ const onSongsReturn = (songsList) => {
     title.innerText = songsList[songIndex].title;
     year.innerText = songsList[songIndex].year;
     audio.src = songsList[songIndex].file;
+    current_time.innerText = '00:00';
+    total_time.innerText = songsList[songIndex].time;
   };
-  initSong();
 
   play.addEventListener('click', () => {
     const playButton = document.getElementById('play');
@@ -48,24 +49,22 @@ const onSongsReturn = (songsList) => {
     }
     initSong();
   });
+  const prettyTime = (t) => {
+    let minutes = Math.floor(t / 60);
+    if (minutes < 10) minutes = '0' + minutes;
+    let seconds = Math.floor(t % 60);
+    if (seconds < 10) seconds = '0' + seconds;
+    return `${minutes}:${seconds}`;
+  };
+
+  audio.addEventListener('timeupdate', (e) => {
+    const { currentTime, duration } = e.srcElement;
+
+    const currentPosition = (currentTime / duration) * 100;
+    progress_bar.style.width = `${currentPosition}%`;
+
+    current_time.innerText = prettyTime(currentTime);
+    total_time.innerText = prettyTime(duration - currentTime);
+  });
+  initSong();
 };
-
-const prettyTime = (t) => {
-  let minutes = Math.floor(t / 60);
-  if (minutes < 10) minutes = '0' + minutes;
-  let seconds = Math.floor(t % 60);
-  if (seconds < 10) seconds = '0' + seconds;
-  return `${minutes}:${seconds}`;
-};
-
-audio.addEventListener('timeupdate', (e) => {
-  const { currentTime, duration } = e.srcElement;
-
-  const currentPosition = (currentTime / duration) * 100;
-  progress_bar.style.width = `${currentPosition}%`;
-
-  console.log(prettyTime(currentTime));
-  console.log(prettyTime(duration));
-  current_time.innerText = prettyTime(currentTime);
-  total_time.innerText = prettyTime(duration - currentTime);
-});

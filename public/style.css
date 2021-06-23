@@ -47,6 +47,18 @@ body {
 
 .time {
   color: white;
+  clear: both;
+  font-size: 14px;
+}
+
+#current_time {
+  float: left;
+  margin-left: 5px;
+}
+
+#total_time {
+  float: right;
+  margin-right: 5px;
 }
 .control_panel i {
   font-size: 30px;
