@@ -47,11 +47,15 @@ const onSongsReturn = (songsList) => {
 
   backward.addEventListener('click', () => {
     songIndex--;
+    progress_bar.style.width = 0;
+
     if (songIndex < 0) {
       songIndex = songsList.length - 1;
     }
     initSong();
+    audio.play();
   });
+
   const prettyTime = (t) => {
     let minutes = Math.floor(t / 60);
     if (minutes < 10) minutes = '0' + minutes;
