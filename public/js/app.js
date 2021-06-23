@@ -49,3 +49,10 @@ const onSongsReturn = (songsList) => {
     initSong();
   });
 };
+
+audio.addEventListener('timeupdate', (e) => {
+  const { currentTime, duration } = e.srcElement;
+  const currentPosition = (currentTime / duration) * 100;
+  progress_bar.style.width = `${currentPosition}%`;
+  console.log(currentTime);
+});
