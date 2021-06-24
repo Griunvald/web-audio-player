@@ -3,11 +3,16 @@
 *::after {
   box-sizing: border-box;
 }
+html,
+body {
+  height: 100%;
+}
 
 body {
-  background-color: #f3eff5;
   margin: 0;
+  height: 100%;
   font-family: 'PT Sans', sans-serif;
+  background-color: #f3eff5;
 }
 
 .main_container {
@@ -49,7 +54,7 @@ body {
   clear: both;
   font-size: 14px;
   margin-top: 5px;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 
 #current_time {
