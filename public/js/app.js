@@ -59,6 +59,11 @@ const onSongsReturn = (songsList) => {
     }
     initSong();
     audio.play();
+    if (!audio.paused) {
+      const playButton = document.getElementById('play');
+      playButton.classList.remove('fa-play');
+      playButton.classList.add('fa-pause');
+    }
   });
 
   const prettyTime = (t) => {
