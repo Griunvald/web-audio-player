@@ -29,6 +29,7 @@ body {
 }
 .media_info {
   color: white;
+  margin-top: 60px;
 }
 
 #album_cover {
