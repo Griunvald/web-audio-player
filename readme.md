@@ -11,3 +11,7 @@ JavaScript, Node.js, Express.js, CSS, HTML5 audio
 - Add volume button
 - Add mute button
 - Add the ability to play a song from a selected mark on a progress bar.
+
+## Screenshots
+
+![look at this](https://github.com/Griunvald/web-audio-player/blob/main/public/images/player.png)
